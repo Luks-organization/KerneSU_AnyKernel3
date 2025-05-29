@@ -10,11 +10,11 @@ do.modules=0
 do.systemless=0
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=
-device.name2=
-device.name3=
-device.name4=
-device.name5=
+device.name1=RMX2151
+device.name2=RMX2155
+device.name3=RMX2156
+device.name4=RMX2163
+device.name5=salaa
 supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
@@ -34,6 +34,7 @@ no_magisk_check=1
 
 kernel_version=$(cat /proc/version | awk -F '-' '{print $1}' | awk '{print $3}')
 case $kernel_version in
+    4.14*) ksu_supported=true ;;
     5.1*) ksu_supported=true ;;
     6.1*) ksu_supported=true ;;
     *) ksu_supported=false ;;
